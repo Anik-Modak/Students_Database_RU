@@ -11,7 +11,7 @@ class StudentController extends Controller
         if ($request->has('search')) {
             $students = Student::where('name', 'like', '%' . $request->get('search') . '%')
                 ->orWhere('dept', 'like', '%' . $request->get('search') . '%')
-                ->orWhere('s-id', 'like', '%' . $request->get('search') . '%')
+                ->orWhere('s_id', 'like', '%' . $request->get('search') . '%')
                 ->paginate(10);
         } else {
             $students = Student::paginate(10);
@@ -33,9 +33,9 @@ class StudentController extends Controller
     {
         $request->validate([
             's_id' => 'required|integer',
-            'name'  => 'required|max:255',
+            'name'  => 'required|max:30',
             'dept'   => 'required|max:25',
-            'address' => 'required|max:255',
+            'address' => 'required|max:50',
             'phone'  => 'required|max:11',
         ]);
 
@@ -56,9 +56,9 @@ class StudentController extends Controller
     {
         $request->validate([
             's_id' => 'required|integer',
-            'name'  => 'required|max:255',
+            'name'  => 'required|max:30',
             'dept'   => 'required|max:25',
-            'address' => 'required|max:255',
+            'address' => 'required|max:50',
             'phone'  => 'required|max:11',
         ]);
 
