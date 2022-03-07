@@ -1,7 +1,7 @@
 @extends('layout', ['title'=> 'Update'])
 
 @section('page-content')
-    <legend>Create student</legend>
+    <legend>Updated Data</legend>
     <form method="post" action="{{route('students.update',$student)}}">
         @csrf
         @method('PUT')

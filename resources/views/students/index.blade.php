@@ -3,25 +3,29 @@
 @section('page-content')
 
     <div class="row">
-        <div class="col-lg-10">
+        <div class="col-2">
+            <p class="text-start"><a href="{{route('students.index')}}" class="btn btn-primary">Home</a></p>
+        </div>
+
+        <div class="col-2">
+            <p class="text-left"><a href="{{route('students.create')}}" class="btn btn-primary">New Student</a></p>
+        </div>
+
+        <div class="col-8 text-right">
             <form action="{{ route('students.index') }}" method="GET" >
                 <div class="form-row">
-                    <div class="col-8">
+                    <div class="col-10">
                         <input type="text" class="form-control" id="search" name="search" placeholder="Search"
                                value="{{ request('search') }}">
                     </div>
-                    <div class="col">
+                    <div class="col-2">
                         <button type="submit" class="btn btn-primary">Search</button>
 
                     </div>
                 </div>
             </form>
-
         </div>
 
-        <div class="col-lg-2">
-            <p class="text-right"><a href="{{route('students.create')}}" class="btn btn-primary">New student</a></p>
-        </div>
     </div>
 
     <table class="table table-striped table-bordered">
@@ -49,7 +53,7 @@
                     <form method="post" action="{{route('students.destroy',$student)}}" onsubmit="return confirm('Sure you want to delete this?')">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" value="Delete" class="btn btn-link text-danger"/>
+                        <input type="submit" value="Delete" class="btn btn-danger"/>
                     </form>
                 </td>
             </tr>

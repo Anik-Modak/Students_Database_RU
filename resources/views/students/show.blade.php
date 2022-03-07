@@ -4,7 +4,7 @@
 
     <table class="table table-striped">
         <tr>
-            <th>Student</th>
+            <th>Student ID</th>
             <td>{{$student->s_id}}</td>
         </tr>
         <tr>
