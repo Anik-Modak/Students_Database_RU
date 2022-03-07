@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->Integer('s_id');
             $table->string('name', 30);
-            $table->string('dept', 30);
+            $table->string('dept', 25);
             $table->string('address', 255);
-            $table->string('phone',11);
+            $table->text('phone',255);
             $table->timestamps();
         });
     }

@@ -19,13 +19,13 @@ class StudentSeeder extends Seeder
 
         $faker = \Faker\Factory::create();
 
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             Student::create([
-                's_id'   => $faker->id
-                'name'   => $faker->name,
-                'dept'   => $faker->dept,
+                's_id'   => $faker->numberBetween(1710000000, 2110000000),
+                'name'   =>  $faker->name,
+                'dept'   => $faker->randomElement(["CSE", "EEE", "MSE", "ICE", "ACCE", "Physics", "Chemistry", "Math", "Pharmacy"]),
                 'address'=> $faker->address,
-                'phone'  => $faker->phone,
+                'phone'  => $faker->phoneNumber,
             ]);
         }
     }
