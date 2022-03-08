@@ -3,7 +3,7 @@
 @section('page-content')
 
     <div class="row">
-        <div class="col-2">
+        <div class="col-1">
             <p class="text-start"><a href="{{route('students.index')}}" class="btn btn-primary">Home</a></p>
         </div>
 
@@ -11,14 +11,14 @@
             <p class="text-left"><a href="{{route('students.create')}}" class="btn btn-primary">New Student</a></p>
         </div>
 
-        <div class="col-8 text-right">
+        <div class="col-9">
             <form action="{{ route('students.index') }}" method="GET" >
                 <div class="form-row">
                     <div class="col-10">
                         <input type="text" class="form-control" id="search" name="search" placeholder="Search"
                                value="{{ request('search') }}">
                     </div>
-                    <div class="col-2">
+                    <div class="col-1">
                         <button type="submit" class="btn btn-primary">Search</button>
 
                     </div>
